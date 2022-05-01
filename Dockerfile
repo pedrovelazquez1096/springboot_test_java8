@@ -26,7 +26,7 @@ ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
 COPY . .
 RUN mvn clean package
 
-FROM openjdk:11
+FROM openjdk:8u332-jdk-oraclelinux8
 COPY --from=build /target/supermarketlistbackend-0.0.1-SNAPSHOT.jar /usr/src/build.jar
 RUN ls /usr/src/
 EXPOSE 8080
