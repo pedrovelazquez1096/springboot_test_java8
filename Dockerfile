@@ -28,6 +28,5 @@ RUN mvn clean package
 
 FROM openjdk:8u332-jdk-oraclelinux8
 COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar /usr/src/build.jar
-RUN ls /usr/src/
 EXPOSE 8080
 CMD ["java", "-jar", "/usr/src/build.jar"]
