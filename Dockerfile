@@ -25,8 +25,6 @@ COPY settings-docker.xml /usr/share/maven/ref/
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
 COPY . .
 RUN mvn clean package
-RUN ls
-RUN ls /target/
 
 FROM openjdk:8u332-jdk-oraclelinux8
 COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar /usr/src/build.jar
